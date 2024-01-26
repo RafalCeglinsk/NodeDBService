@@ -8,18 +8,18 @@ import { deleteContacts } from "#controllers/contacts/deleteContacts.js";
 import { updateContacts } from "#controllers/contacts/updateContacts.js";
 import { updateStatusContact } from "#controllers/contacts/updateStatusContact.js";
 
-const router = express.Router();
+const contactRouter = express.Router();
 
-router.get("/", indexContacts);
+contactRouter.get("/", indexContacts);
 
-router.get("/:contactId", showContacts);
+contactRouter.get("/:contactId", showContacts);
 
-router.post("/", validateContactData, createContacts);
+contactRouter.post("/", validateContactData, createContacts);
 
-router.delete("/:contactId", deleteContacts);
+contactRouter.delete("/:contactId", deleteContacts);
 
-router.put("/:contactId", validateContactData, updateContacts);
+contactRouter.put("/:contactId", validateContactData, updateContacts);
 
-router.patch("/:contactId/favorite", updateStatusContact);
+contactRouter.patch("/:contactId/favorite", updateStatusContact);
 
-export { router };
+export { contactRouter };

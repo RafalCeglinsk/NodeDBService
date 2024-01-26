@@ -1,3 +1,4 @@
+import jwt from "jsonwebtoken";
 import { User } from "#models/users.schema.js";
 
 const login = async (req, res) => {

@@ -5,7 +5,7 @@ import { login } from "../../controllers/users/login.js";
 
 const userRouter = express.Router();
 
-userRouter.post("/users/signup", validateUserData, signUp);
-userRouter.post("/users/login", validateUserData, login);
+userRouter.post("/signup", validateUserData, signUp);
+userRouter.post("/login", validateUserData, login);
 
 export { userRouter };
