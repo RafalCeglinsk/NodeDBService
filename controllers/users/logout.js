@@ -1,4 +1,4 @@
-import { User } from "../../models/users.schema.js";
+import { User } from "#models/users.schema.js";
 
 const logout = async (req, res) => {
   const _id = req.user._id;

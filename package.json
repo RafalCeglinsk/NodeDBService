@@ -37,6 +37,7 @@
     "#routes/*": "./routes/*",
     "#helpers/*": "./helpers/*",
     "#models/*": "./models/*",
-    "#validation/*": "./validation/*"
+    "#validation/*": "./validation/*",
+    "#auth/*": "./auth/*"
   }
 }
