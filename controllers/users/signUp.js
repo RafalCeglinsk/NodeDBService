@@ -15,7 +15,12 @@ const signUp = async (req, res) => {
   const user = new User({ email, password: hashedPassword });
   await user.save();
 
-  return res.status(200).json({ message: "User successfully registered" });
+  return res.status(200).json({
+    user: {
+      email,
+      subscription: "starter",
+    },
+  });
 };
 
 export { signUp };

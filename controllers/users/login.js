@@ -16,8 +16,10 @@ const login = async (req, res) => {
     "secret"
   );
   return res.status(200).json({
-    data: {
-      token,
+    token,
+    user: {
+      email,
+      subscription: "starter",
     },
   });
 };
