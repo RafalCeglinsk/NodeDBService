@@ -1,25 +1,26 @@
 import express from "express";
 
-import { validateContactData } from "#validation/joi.js";
+import { validateContactData } from "#validation/contacts.validation.js";
 import { indexContacts } from "#controllers/contacts/indexContacts.js";
 import { showContacts } from "#controllers/contacts/showContacts.js";
 import { createContacts } from "#controllers/contacts/createContacts.js";
 import { deleteContacts } from "#controllers/contacts/deleteContacts.js";
 import { updateContacts } from "#controllers/contacts/updateContacts.js";
 import { updateStatusContact } from "#controllers/contacts/updateStatusContact.js";
+import { auth } from "#auth/auth.js";
 
-const router = express.Router();
+const contactRouter = express.Router();
 
-router.get("/", indexContacts);
+contactRouter.get("/", auth, indexContacts);
 
-router.get("/:contactId", showContacts);
+contactRouter.get("/:contactId", auth, showContacts);
 
-router.post("/", validateContactData, createContacts);
+contactRouter.post("/", validateContactData, auth, createContacts);
 
-router.delete("/:contactId", deleteContacts);
+contactRouter.delete("/:contactId", auth, deleteContacts);
 
-router.put("/:contactId", validateContactData, updateContacts);
+contactRouter.put("/:contactId", validateContactData, auth, updateContacts);
 
-router.patch("/:contactId/favorite", updateStatusContact);
+contactRouter.patch("/:contactId/favorite", auth, updateStatusContact);
 
-export { router };
+export { contactRouter };
