@@ -19,7 +19,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.1.0",
     "morgan": "1.10.0",
-    "nanoid": "^5.0.4",
+    "nanoid": "^5.0.5",
+    "nodemailer": "^6.9.9",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1"
   },
@@ -38,6 +39,7 @@
     "#helpers/*": "./helpers/*",
     "#models/*": "./models/*",
     "#validation/*": "./validation/*",
-    "#auth/*": "./auth/*"
+    "#auth/*": "./auth/*",
+    "#services/*": "./services/*"
   }
 }

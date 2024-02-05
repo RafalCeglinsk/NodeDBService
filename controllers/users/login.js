@@ -8,6 +8,10 @@ const login = async (req, res) => {
   if (!existingUser || !existingUser.validPassword(password)) {
     return res.status(401).json({ message: "Invalid email or password" });
   }
+  const verifiedUser = await User.findOne({ email, verify: true });
+  if (!verifiedUser) {
+    return res.status(401).json({ message: "User not verified" });
+  }
 
   const token = jwt.sign(
     {
