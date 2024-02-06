@@ -1,31 +1,34 @@
-## GoIT Node.js Course Template Homework
+# NodeDBService
 
-Виконайте форк цього репозиторію для виконання домашніх завдань (2-6)
-Форк створить репозиторій на вашому http://github.com
+This project is a Node.js-based application that uses MongoDB as a database. The application is built around a REST API architecture, which enables easy and efficient data management.
 
-Додайте ментора до колаборації
+## Features
 
-Для кожної домашньої роботи створюйте свою гілку.
+- CRUD operations (Create, Read, Update, Delete) on data
+- Authentication and authorization of users using JWT (JSON Web Tokens)
+- Sending emails to users using Mailgun
 
-- hw02
-- hw03
-- hw04
-- hw05
-- hw06
+## Requirements
 
-Кожна нова гілка для др повинна робитися з master
+- Node.js
+- MongoDB
 
-Після того, як ви закінчили виконувати домашнє завдання у своїй гілці, необхідно зробити пулл-реквест (PR). Потім додати ментора для рев'ю коду. Тільки після того, як ментор заапрувить PR, ви можете виконати мердж гілки з домашнім завданням у майстер.
+## Getting started instructions
 
-Уважно читайте коментарі ментора. Виправте зауваження та зробіть коміт у гілці з домашнім завданням. Зміни підтягнуться у PR автоматично після того, як ви відправите коміт з виправленнями на github
-Після виправлення знову додайте ментора на рев'ю коду.
+1. Clone the repository to your local environment using `git clone https://github.com/RafalCeglinsk/NodeDBService.git`.
+2. Navigate to your project folder using `cd NodeDBService`.
+3. Install the dependencies using `npm install`.
+4. Create an `.env` file in the root directory of the project and copy the following environment variables into it, adjusting them to your environment:
 
-- При здачі домашньої роботи є посилання на PR
-- JS-код чистий та зрозумілий, для форматування використовується Prettier
+```properties
+DATABASE_URL=YOUR_DATABASE_URL
+PORT=3000
+JWT_SECRET=YOUR_SECRET
+MAILGUN_USER=YOUR_MAILGUN_USER
+MAILGUN_API_KEY=YOUR_MAILGUN_API_KEY
+MAILGUN_EMAIL=YOUR_MAILGUN_EMAIL
 
-### Команди:
+Start the project using npm start.
 
-- `npm start` &mdash; старт сервера в режимі production
-- `npm run start:dev` &mdash; старт сервера в режимі розробки (development)
-- `npm run lint` &mdash; запустити виконання перевірки коду з eslint, необхідно виконувати перед кожним PR та виправляти всі помилки лінтера
-- `npm lint:fix` &mdash; та ж перевірка лінтера, але з автоматичними виправленнями простих помилок
+Now the application should be available at http://localhost:3000.
+```
